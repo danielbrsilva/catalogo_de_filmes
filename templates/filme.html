@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ filme.titulo }} - Danflix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/categorias">Categorias</a>
+</nav>
+
+<div class="container filme-detalhe">
+    {# EXIBINDO A IMAGEM DO FILME #}
+    {% if filme.imagem %}
+        <img src="{{ url_for('static', filename='images/' + filme.imagem) }}" alt="Pôster do filme {{ filme.titulo }}" class="poster-detalhe">
+    {% endif %}
+
+    <div class="info-filme">
+        <h1>{{ filme.titulo }}</h1>
+        <p class="categoria"><strong>Categoria:</strong> {{ filme.categoria }}</p>
+        <p class="descricao">{{ filme.descricao }}</p>
+        <a href="#" class="btn-assistir">▶ Assistir</a>
+        <a href="/" class="btn-voltar">Voltar</a>
+    </div>
+</div>
+
+</body>
+</html>

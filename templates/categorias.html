@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/categorias">Categorias</a>
+</nav>
+
+<div class="container">
+    <h1>Categorias</h1>
+
+    <ul>
+        {% for cat in categorias %}
+            <li>{{ cat }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

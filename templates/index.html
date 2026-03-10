@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Filmes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/categorias">Categorias</a>
+</nav>
+
+<div class="container">
+    <h1>Catálogo de Filmes da Danflix</h1>
+
+    <ul>
+        {% for key, filme in filmes.items() %}
+            <li>
+                <a href="/filme/{{ key }}">{{ filme.titulo }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+</body>
+</html>
